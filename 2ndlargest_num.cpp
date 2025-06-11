@@ -1,31 +1,30 @@
 #include <iostream>
-#include <string>
-#include <algorithm>
+#include <vector>
 using namespace std;
-void findSecondMax(int a[], int n, int i, long long& maxV, long long& secondV) {
-    if (i == n) return;
-    if (a[i] > maxV) {
-        secondV = maxV;
-        maxV = a[i];
-    }
-    else if (a[i] > secondV && a[i] < maxV) {
-        secondV = a[i];
-    }
-    findSecondMax(a, n, i + 1, maxV, secondV);
-}
 
-int main()
-{
-    int n, a[1000];
+int main() {
+    int n;
     cin >> n;
-    if (n < 2) return cout << "NOT FOUND", 0;
+    vector<int>a(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
 
-    for (int i = 0; i < n; i++) cin >> a[i];
+    int max1 = INT_MIN, max2 = INT_MIN;
+    for (int i = 0; i < n; i++) {
+        if (a[i] > max1) {
+            max2 = max1;
+            max1 = a[i];
+        } else if (a[i] > max2 && a[i] != max1) {
+            max2 = a[i];
+        }
+    }
 
-    long long maxV = LLONG_MIN, secondV = LLONG_MIN;
-    findSecondMax(a, n, 0, maxV, secondV);
+    if (max2 == INT_MIN) {
+        cout << "NOT FOUND";
+    } else {
+        cout << max2 << endl;
+    }
 
-    cout << (secondV == LLONG_MIN ? "NOT FOUND" : to_string(secondV)); //find second largest number
     return 0;
-
 }
