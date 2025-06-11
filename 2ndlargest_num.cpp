@@ -15,7 +15,7 @@ int main() {
         if (a[i] > max1) {
             max2 = max1;
             max1 = a[i];
-        } else if (a[i] > max2 && a[i] != max1) {
+        } else if (a[i] > max2 && a[i] != max1) {  //condition to find 2nd-largest number
             max2 = a[i];
         }
     }
