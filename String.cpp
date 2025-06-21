@@ -3,6 +3,20 @@
 using namespace std;
 
 int main() {
+    for(char c='A';c<='Z';c++){
+        cout<<c;                   //print alphabet following uppercase string
+    }
+    return 0;
+}
+
+
+
+
+#include<iostream>
+
+using namespace std;
+
+int main() {
     string s;
     char c;
     cin>>s>>c;
@@ -91,6 +105,25 @@ int main() {
         }
     }
     cout<<cnt;
+    return 0;
+}
+
+
+
+
+#include<iostream>
+
+using namespace std;
+
+int main() {
+    string s;
+    cin>>s;
+    for(int i=0;i<s.size();i++){
+        if(s[i]=='3'){
+            s[i]='e';               //string s after change from '3' to 'e'
+        }
+    }
+    cout<<s;
     return 0;
 }
 
