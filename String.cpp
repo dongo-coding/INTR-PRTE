@@ -48,7 +48,7 @@ int main() {
     cin>>s;
     for(int i=0;i<s.size();i++){
         if(s[i]>='a' && s[i]<='z'){   
-            s[i]-=32;                    //printed string to regular string
+            s[i]-=32;                    //lowercase string to uppercase string
         }
     }
     cout<<s;
